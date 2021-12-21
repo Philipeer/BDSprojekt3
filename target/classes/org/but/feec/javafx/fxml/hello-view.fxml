@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="570.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.but.feec.javafx.controllers.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" prefHeight="28.0" prefWidth="456.0" text="Car Factory employee database">
+      <font>
+         <Font name="System Bold Italic" size="19.0" />
+      </font></Label>
+   <TableView fx:id="employeeTableView" prefHeight="295.0" prefWidth="530.0">
+     <columns>
+       <TableColumn fx:id="employeeID" prefWidth="44.79998588562012" text="ID" />
+       <TableColumn fx:id="employeeName" prefWidth="118.20001220703125" text="Name" />
+         <TableColumn fx:id="employeeSurname" prefWidth="116.39994812011719" text="Surname" />
+         <TableColumn fx:id="employeeMail" prefWidth="133.5999755859375" text="Mail" />
+         <TableColumn fx:id="employeeBuilding" prefWidth="116.800048828125" text="Building" />
+     </columns>
+   </TableView>
+   <Button fx:id="addEmployeeButton" mnemonicParsing="false" onAction="#handleAddEmployeeButton" prefHeight="26.0" prefWidth="111.0" text="Create employee" />
+   <Button fx:id="refreshBtn" mnemonicParsing="false" onAction="#handleRefreshBtn" prefHeight="26.0" prefWidth="108.0" text="Refresh database" />
+</VBox>
