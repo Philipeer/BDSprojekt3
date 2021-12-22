@@ -1,4 +1,9 @@
-To run the project, open command line and write:
-mvn clean install
-cd .\target\
-java -jar .\project-demo-1.0-SNAPSHOT.jar
+# BDS-projekt 3
+
+Instalace - Windows:
+------------------
+Posloupnost příkazů:
+- `git clone https://github.com/Philipeer/BDSprojekt3.git`
+- `cd BDSprojekt3`
+- `cd target`
+- `java -jar .\project-demo-1.0-SNAPSHOT.jar`
