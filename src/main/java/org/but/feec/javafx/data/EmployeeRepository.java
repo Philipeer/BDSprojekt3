@@ -10,6 +10,32 @@ import java.util.List;
 
 
 public class EmployeeRepository {
+    //SQL INJECTION
+    public List<SQLInjectionView> findByDataStatement(String data) {
+        String sqlResult = "SELECT id, data FROM dummy_table d WHERE d.data = '" + data + "'";
+        try (Connection connection = DataSourceConfig.getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sqlResult)) {
+            List<SQLInjectionView> sqlInjectionExampleDtos = new ArrayList<>();
+            while (resultSet.next()) {
+                sqlInjectionExampleDtos.add(mapToSQLInjectionExampleDto(resultSet));
+            }
+            return sqlInjectionExampleDtos;
+        } catch (SQLException e) {
+            //throw new DataAccessException("Find all users SQL failed.", e);
+            System.out.println("SQL INJECTION");
+        }
+        return null;
+    }
+
+    private SQLInjectionView mapToSQLInjectionExampleDto(ResultSet resultSet) throws SQLException {
+        SQLInjectionView sqlInjectionExampleDto = new SQLInjectionView();
+        sqlInjectionExampleDto.setId(resultSet.getLong("id"));
+        sqlInjectionExampleDto.setData(resultSet.getString("data"));
+        return sqlInjectionExampleDto;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+
     public EmployeeAuthView findEmployeeByEmail(String mail) {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(

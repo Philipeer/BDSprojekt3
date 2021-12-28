@@ -1,7 +1,4 @@
-382  [JavaFX Application Thread] INFO  o.b.f.j.controllers.LoginController - LoginController initialized
-12663 [JavaFX Application Thread] INFO  o.b.f.j.controllers.HelloController - PersonsController initialized
-27999 [JavaFX Application Thread] INFO  o.b.f.j.c.DetailController - DetailController initialized
-40289 [JavaFX Application Thread] INFO  o.b.f.j.controllers.EditController - PersonsEditController initialized
-53333 [JavaFX Application Thread] INFO  o.b.f.j.controllers.HelloController - Database refreshed!
-69724 [JavaFX Application Thread] INFO  o.b.f.j.controllers.EditController - PersonsEditController initialized
-77621 [JavaFX Application Thread] INFO  o.b.f.j.controllers.HelloController - Database refreshed!
+505  [JavaFX Application Thread] INFO  o.b.f.j.controllers.LoginController - LoginController initialized
+10207 [JavaFX Application Thread] INFO  o.b.f.j.controllers.HelloController - PersonsController initialized
+23479 [JavaFX Application Thread] INFO  o.b.f.j.c.CreateController - PersonCreateController initialized
+49665 [JavaFX Application Thread] INFO  o.b.f.j.controllers.HelloController - Database refreshed!

@@ -22,3 +22,4 @@ org\but\feec\javafx\api\EmployeeCreateView.class
 org\but\feec\javafx\services\AuthService.class
 org\but\feec\javafx\exceptions\ExceptionHandler.class
 org\but\feec\javafx\api\EmployeeBasicView.class
+org\but\feec\javafx\api\SQLInjectionView.class

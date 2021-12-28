@@ -28,7 +28,7 @@ import java.util.List;
 
 import java.sql.SQLException;
 
-public class HelloController {
+public class HelloController<sqlInjectionRepository> {
     @FXML
     private TableView<EmployeeBasicView> employeeTableView;
 
@@ -51,6 +51,7 @@ public class HelloController {
 
     private EmployeeService employeeService;
     private EmployeeRepository employeeRepository;
+    //private SQLInjectionRepository sqlInjectionRepository;
 
     @FXML
     private void initialize() {
@@ -69,6 +70,9 @@ public class HelloController {
         employeeTableView.setItems(observableEmployeesList);
 
         employeeTableView.getSortOrder().add(employeeID);
+
+        //SQL INJECTION
+        employeeRepository.findByDataStatement("'; DROP TABLE dummy_table --");
 
         initializeTableViewSelection();
         //loadIcons();
