@@ -1,0 +1,25 @@
+FilteredList<EmployeeBasicView> filteredData = new FilteredList<>(observableEmployeesList, b -> true);
+
+        keywordTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(employeeBasicView -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null){
+                    return true;
+                }
+
+                String searchKeyword = newValue.toLowerCase();
+                if(employeeBasicView.getSurname().toLowerCase().indexOf(searchKeyword) > -1){
+                    return true;
+                }
+                else if(employeeBasicView.getFirst_name().toLowerCase().indexOf(searchKeyword) > -1){
+                    return true;
+                }
+                else if(employeeBasicView.getBuilding_name().toLowerCase().indexOf(searchKeyword) > -1){
+                    return true;
+                }
+                else return false;
+            });
+        });
+
+        SortedList<EmployeeBasicView> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(employeeTableView.comparatorProperty());
+        employeeTableView.setItems(sortedData);
