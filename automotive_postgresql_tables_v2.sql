@@ -234,4 +234,5 @@ CREATE TABLE IF NOT EXISTS "dummy_table" (
 
 INSERT INTO dummy_table(data) values ('data1');
 INSERT INTO dummy_table(data) values ('data2');
-INSERT INTO dummy_table(data) values ('data3');  
+INSERT INTO dummy_table(data) values ('data3');
+CREATE SCHEMA IF NOT EXISTS bds;  
